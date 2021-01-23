@@ -6,11 +6,18 @@ import lk.ijse.thogakade.dao.custom.impl.CustomerDaoImpl;
 import lk.ijse.thogakade.dto.CustomerDTO;
 import lk.ijse.thogakade.entity.Customer;
 
+import java.util.ArrayList;
+
 public class CustomerBoImpl implements CustomerBO {
     CustomerDaoImpl customerDAO = DaoFactory.getInstance().getDao(DaoFactory.DaoType.CUSTOMER);
     @Override
     public boolean addCustomer(CustomerDTO customerDTO) throws Exception {
         return customerDAO.add(new Customer(customerDTO.getId(),customerDTO.getName()
                 ,customerDTO.getAddress(),customerDTO.getSalary()));
+    }
+
+    @Override
+    public ArrayList<CustomerDTO> getAll() throws Exception {
+        return null;
     }
 }

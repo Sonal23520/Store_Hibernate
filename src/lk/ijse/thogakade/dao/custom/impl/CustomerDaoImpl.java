@@ -5,13 +5,15 @@ import lk.ijse.thogakade.entity.Customer;
 import lk.ijse.thogakade.util.FactoryConfiguration;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
+import org.hibernate.query.Query;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class CustomerDaoImpl implements CustomerDAO {
+    Session session = FactoryConfiguration.getInstance().getSession();
     @Override
     public boolean add(Customer entity) throws Exception {
-        Session session = FactoryConfiguration.getInstance().getSession();
         Transaction transaction = session.beginTransaction();
         session.save(entity);
         transaction.commit();
@@ -35,6 +37,10 @@ public class CustomerDaoImpl implements CustomerDAO {
 
     @Override
     public ArrayList<Customer> getAll() throws Exception {
-        return null;
+        Transaction transaction = session.beginTransaction();
+        Query query = session.createQuery("from Customer");
+        List<Customer> list = query.list();
+        transaction.commit();
+        return (ArrayList<Customer>) list;
     }
 }
