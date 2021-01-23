@@ -27,12 +27,19 @@ public class CustomerDaoImpl implements CustomerDAO {
 
     @Override
     public boolean delete(String s) throws Exception {
-        return false;
+        Transaction transaction = session.beginTransaction();
+        Customer load = session.load(Customer.class, Integer.parseInt(s));
+        session.delete(load);
+        transaction.commit();
+        return true;
     }
 
     @Override
     public Customer search(String s) throws Exception {
-        return null;
+        Transaction transaction = session.beginTransaction();
+        Customer customer = session.get(Customer.class, Integer.parseInt(s));
+        transaction.commit();
+        return customer;
     }
 
     @Override

@@ -1,27 +1,23 @@
-package lk.ijse.thogakade.entity;
+package lk.ijse.thogakade.view.tm;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import com.jfoenix.controls.JFXButton;
 
-@Entity
-public class Customer implements SuperEntity {
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+public class CustomerTM {
     private int id;
     private String name;
     private String address;
     private String salary;
+    private JFXButton jfxButton;
 
-    public Customer() {
+    public CustomerTM() {
     }
 
-    public Customer(int id, String name, String address, String salary) {
+    public CustomerTM(int id, String name, String address, String salary, JFXButton jfxButton) {
         this.id = id;
         this.name = name;
         this.address = address;
         this.salary = salary;
+        this.jfxButton = jfxButton;
     }
 
     public int getId() {
@@ -56,13 +52,22 @@ public class Customer implements SuperEntity {
         this.salary = salary;
     }
 
+    public JFXButton getJfxButton() {
+        return jfxButton;
+    }
+
+    public void setJfxButton(JFXButton jfxButton) {
+        this.jfxButton = jfxButton;
+    }
+
     @Override
     public String toString() {
-        return "Customer{" +
+        return "CustomerTM{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
                 ", address='" + address + '\'' +
                 ", salary='" + salary + '\'' +
+                ", jfxButton=" + jfxButton +
                 '}';
     }
 }

@@ -18,6 +18,25 @@ public class CustomerBoImpl implements CustomerBO {
 
     @Override
     public ArrayList<CustomerDTO> getAll() throws Exception {
-        return null;
+        ArrayList<CustomerDTO> arrayList = new ArrayList<>();
+        ArrayList<Customer> all = customerDAO.getAll();
+    for (Customer customer : all) {
+      arrayList.add(new CustomerDTO(customer.getId(),customer.getName(),customer.getAddress(),customer.getSalary()));
     }
+        return arrayList;
+    }
+
+    @Override
+    public boolean deleteCustomer(String s) throws Exception {
+        return customerDAO.delete(s);
+    }
+
+    @Override
+    public CustomerDTO searchCustomer(String s) throws Exception {
+        Customer search = customerDAO.search(s);
+        return new CustomerDTO(search.getId(),search.getName(),search.getAddress(),
+                search.getSalary());
+    }
+
+
 }
