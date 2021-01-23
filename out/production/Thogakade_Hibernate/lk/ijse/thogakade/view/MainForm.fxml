@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="201.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.thogakade.controller.MainFormController">
+   <children>
+      <AnchorPane layoutX="14.0" layoutY="51.0" prefHeight="133.0" prefWidth="134.0" style="-fx-border-color: black; -fx-border-radius: 10%;">
+         <children>
+            <ImageView fitHeight="150.0" fitWidth="102.0" layoutX="16.0" layoutY="16.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../assert/customer.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+      <Label layoutX="263.0" layoutY="-1.0" text="Store">
+         <font>
+            <Font name="Open Sans Light Italic" size="30.0" />
+         </font>
+      </Label>
+      <Separator layoutX="196.0" layoutY="37.0" prefWidth="200.0" />
+      <AnchorPane layoutX="229.0" layoutY="51.0" prefHeight="133.0" prefWidth="134.0" style="-fx-border-color: black; -fx-border-radius: 10%;">
+         <children>
+            <ImageView fitHeight="150.0" fitWidth="102.0" layoutX="14.0" layoutY="16.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../assert/to-do.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="452.0" layoutY="51.0" prefHeight="133.0" prefWidth="134.0" style="-fx-border-color: black; -fx-border-radius: 10%;">
+         <children>
+            <ImageView fitHeight="150.0" fitWidth="102.0" layoutX="16.0" layoutY="16.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../assert/shopping-cart.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

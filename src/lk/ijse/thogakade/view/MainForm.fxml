@@ -10,7 +10,7 @@
 
 <AnchorPane prefHeight="201.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.thogakade.controller.MainFormController">
    <children>
-      <AnchorPane fx:id="paneCustomer" layoutX="14.0" layoutY="51.0" onMouseClicked="#customer" prefHeight="133.0" prefWidth="134.0" style="-fx-border-color: black; -fx-border-radius: 10%;">
+      <AnchorPane fx:id="paneCustomer" layoutX="14.0" layoutY="51.0" onMouseClicked="#customer" prefHeight="133.0" prefWidth="134.0" style="-fx-border-color: black; -fx-border-radius: 10%;" styleClass="pane" stylesheets="@../assert/css/MainForm.css">
          <children>
             <ImageView fx:id="imgCustomer" fitHeight="150.0" fitWidth="102.0" layoutX="16.0" layoutY="16.0" onMouseClicked="#customer" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -25,7 +25,7 @@
          </font>
       </Label>
       <Separator layoutX="196.0" layoutY="37.0" prefWidth="200.0" />
-      <AnchorPane fx:id="paneItem" layoutX="229.0" layoutY="51.0" onMouseClicked="#item" prefHeight="133.0" prefWidth="134.0" style="-fx-border-color: black; -fx-border-radius: 10%;">
+      <AnchorPane fx:id="paneItem" layoutX="229.0" layoutY="51.0" onMouseClicked="#item" prefHeight="133.0" prefWidth="134.0" style="-fx-border-color: black; -fx-border-radius: 10%;" styleClass="pane" stylesheets="@../assert/css/MainForm.css">
          <children>
             <ImageView fx:id="imgItem" fitHeight="150.0" fitWidth="102.0" layoutX="14.0" layoutY="16.0" onMouseClicked="#item" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -34,7 +34,7 @@
             </ImageView>
          </children>
       </AnchorPane>
-      <AnchorPane fx:id="paneOrder" layoutX="452.0" layoutY="51.0" onMouseClicked="#order" prefHeight="133.0" prefWidth="134.0" style="-fx-border-color: black; -fx-border-radius: 10%;">
+      <AnchorPane fx:id="paneOrder" layoutX="452.0" layoutY="51.0" onMouseClicked="#order" prefHeight="133.0" prefWidth="134.0" style="-fx-border-color: black; -fx-border-radius: 10%;" styleClass="pane" stylesheets="@../assert/css/MainForm.css">
          <children>
             <ImageView fx:id="imgOrder" fitHeight="150.0" fitWidth="102.0" layoutX="16.0" layoutY="16.0" onMouseClicked="#order" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -43,7 +43,7 @@
             </ImageView>
          </children>
       </AnchorPane>
-      <AnchorPane fx:id="paneClose" layoutX="565.0" layoutY="6.0" onMouseClicked="#close" prefHeight="24.0" prefWidth="24.0" style="-fx-border-color: red; -fx-border-radius: 4px;">
+      <AnchorPane fx:id="paneClose" layoutX="565.0" layoutY="6.0" onMouseClicked="#close" prefHeight="24.0" prefWidth="24.0" style="-fx-border-color: red; -fx-border-radius: 4px;" styleClass="close" stylesheets="@../assert/css/MainForm.css">
          <children>
             <ImageView fx:id="imgClose" fitHeight="24.0" fitWidth="16.0" layoutX="4.0" layoutY="4.0" onMouseClicked="#close" pickOnBounds="true" preserveRatio="true">
                <image>
