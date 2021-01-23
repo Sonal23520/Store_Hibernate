@@ -1,5 +1,6 @@
 package lk.ijse.thogakade.util;
 
+import lk.ijse.thogakade.entity.Customer;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
@@ -10,7 +11,7 @@ public class FactoryConfiguration {
     private SessionFactory sessionFactory;
     private FactoryConfiguration() {
         Configuration configuration = new Configuration()
-                                        .addAnnotatedClass(null);
+                                        .addAnnotatedClass(Customer.class);
     sessionFactory = configuration.buildSessionFactory();
     }
 

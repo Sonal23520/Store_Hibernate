@@ -7,12 +7,11 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane prefHeight="201.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.thogakade.controller.MainFormController">
+<AnchorPane fx:id="pane" prefHeight="201.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.thogakade.controller.MainFormController">
    <children>
       <AnchorPane fx:id="paneCustomer" layoutX="14.0" layoutY="51.0" onMouseClicked="#customer" prefHeight="133.0" prefWidth="134.0" style="-fx-border-color: black; -fx-border-radius: 10%;" styleClass="pane" stylesheets="@../assert/css/MainForm.css">
          <children>
-            <ImageView fx:id="imgCustomer" fitHeight="150.0" fitWidth="102.0" layoutX="16.0" layoutY="16.0" onMouseClicked="#customer" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="imgCustomer" fitHeight="150.0" fitWidth="102.0" layoutX="16.0" layoutY="16.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../assert/customer.png" />
                </image>
@@ -27,7 +26,7 @@
       <Separator layoutX="196.0" layoutY="37.0" prefWidth="200.0" />
       <AnchorPane fx:id="paneItem" layoutX="229.0" layoutY="51.0" onMouseClicked="#item" prefHeight="133.0" prefWidth="134.0" style="-fx-border-color: black; -fx-border-radius: 10%;" styleClass="pane" stylesheets="@../assert/css/MainForm.css">
          <children>
-            <ImageView fx:id="imgItem" fitHeight="150.0" fitWidth="102.0" layoutX="14.0" layoutY="16.0" onMouseClicked="#item" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="imgItem" fitHeight="150.0" fitWidth="102.0" layoutX="14.0" layoutY="16.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../assert/to-do.png" />
                </image>
@@ -36,7 +35,7 @@
       </AnchorPane>
       <AnchorPane fx:id="paneOrder" layoutX="452.0" layoutY="51.0" onMouseClicked="#order" prefHeight="133.0" prefWidth="134.0" style="-fx-border-color: black; -fx-border-radius: 10%;" styleClass="pane" stylesheets="@../assert/css/MainForm.css">
          <children>
-            <ImageView fx:id="imgOrder" fitHeight="150.0" fitWidth="102.0" layoutX="16.0" layoutY="16.0" onMouseClicked="#order" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="imgOrder" fitHeight="150.0" fitWidth="102.0" layoutX="16.0" layoutY="16.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../assert/shopping-cart.png" />
                </image>

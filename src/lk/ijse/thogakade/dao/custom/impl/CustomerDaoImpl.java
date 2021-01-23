@@ -2,13 +2,20 @@ package lk.ijse.thogakade.dao.custom.impl;
 
 import lk.ijse.thogakade.dao.custom.CustomerDAO;
 import lk.ijse.thogakade.entity.Customer;
+import lk.ijse.thogakade.util.FactoryConfiguration;
+import org.hibernate.Session;
+import org.hibernate.Transaction;
 
 import java.util.ArrayList;
 
 public class CustomerDaoImpl implements CustomerDAO {
     @Override
     public boolean add(Customer entity) throws Exception {
-        return false;
+        Session session = FactoryConfiguration.getInstance().getSession();
+        Transaction transaction = session.beginTransaction();
+        session.save(entity);
+        transaction.commit();
+        return true;
     }
 
     @Override
