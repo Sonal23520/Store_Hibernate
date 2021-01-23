@@ -1,0 +1,9 @@
+.close:hover{
+    -fx-background-color: #f51717;
+    -fx-background-radius: 4px;
+}
+.pane:hover{
+    -fx-background-color: #51f191;
+    -fx-background-radius: 14px;
+    -fx-border-radius: 20%;
+}
