@@ -61,23 +61,45 @@ public class CustomerController implements Initializable {
 
     CustomerBoImpl customerBo = BoFactory.getInstance().getBo(BoFactory.BoType.CUSTOMER);
     ObservableList<CustomerTM> customerTMS = FXCollections.observableArrayList();
+    boolean b=false;
+    CustomerDTO updateCustomer;
+
     @FXML
     void save(ActionEvent event) throws Exception {
 
-        boolean b = customerBo.addCustomer(new CustomerDTO(1,txtName.getText(),txtAddress.getText(),txtSalary.getText()));
         if (b){
-            alert("Customer Added...", Alert.AlertType.CONFIRMATION);
-        }else {
-            alert("Customer Added Failed...", Alert.AlertType.ERROR);
-        }
+            System.out.println(b);
+            boolean update = customerBo.updateCustomer(new CustomerDTO(Integer.parseInt(lblId.getText()), txtName.getText(), txtAddress.getText(), txtSalary.getText()));
+            if (update){
+                alert("Update Success...", Alert.AlertType.CONFIRMATION);
+                ArrayList<CustomerDTO> all = customerBo.getAll();
+                CustomerDTO customerDTO1 = all.get(all.size() - 1);
+                lblId.setText(String.valueOf(customerDTO1.getId()+1));
+                loadTable();
+                txtName.clear();
+                txtAddress.clear();
+                txtSalary.clear();
+            }else {
+                alert("Update Failed...", Alert.AlertType.CONFIRMATION);
+            }
 
-        ArrayList<CustomerDTO> all = customerBo.getAll();
-        CustomerDTO customerDTO1 = all.get(all.size() - 1);
-        lblId.setText(String.valueOf(customerDTO1.getId()+1));
-        loadTable();
-        txtName.clear();
-        txtAddress.clear();
-        txtSalary.clear();
+
+        }
+        else {
+            boolean added = customerBo.addCustomer(new CustomerDTO(1,txtName.getText(),txtAddress.getText(),txtSalary.getText()));
+            if (added){
+                alert("Customer Added...", Alert.AlertType.CONFIRMATION);
+            }else {
+                alert("Customer Added Failed...", Alert.AlertType.ERROR);
+            }
+            ArrayList<CustomerDTO> all = customerBo.getAll();
+            CustomerDTO customerDTO1 = all.get(all.size() - 1);
+            lblId.setText(String.valueOf(customerDTO1.getId()+1));
+            loadTable();
+            txtName.clear();
+            txtAddress.clear();
+            txtSalary.clear();
+        }
 
     }
     @Override
@@ -135,19 +157,26 @@ public class CustomerController implements Initializable {
     }
 
     public void search(ActionEvent actionEvent) throws Exception {
-//
-//        for (CustomerTM customerTM:customerTMS) {
-//            if (customerTM.getId()!=Integer.parseInt(txtSearch.getText().trim())){
-//                System.out.println("okk");
-//            }
-//        }
-        CustomerDTO customerDTO = customerBo.searchCustomer(txtSearch.getText().trim());
-        lblId.setText(String.valueOf(customerDTO.getId()));
-        txtName.setText(customerDTO.getName());
-        txtAddress.setText(customerDTO.getAddress());
-        txtSalary.setText(customerDTO.getSalary());
-        txtSearch.clear();
+        ArrayList<CustomerDTO> all = customerBo.getAll();
+        for (CustomerDTO customerDTO : all) {
+            if (customerDTO.getId()==Integer.parseInt(txtSearch.getText().trim())){
+                b=true;
+            }
+        }
+            if (b){
+                CustomerDTO customerDTO = customerBo.searchCustomer(txtSearch.getText().trim());
+                updateCustomer=customerDTO;
+                lblId.setText(String.valueOf(updateCustomer.getId()));
+                txtName.setText(updateCustomer.getName());
+                txtAddress.setText(updateCustomer.getAddress());
+                txtSalary.setText(updateCustomer.getSalary());
+                txtSearch.clear();
+                return;
 
-
+            }else {
+                alert("Customer Not Found!...", Alert.AlertType.WARNING);
+                txtSearch.clear();
+                return;
+            }
     }
 }

@@ -38,5 +38,11 @@ public class CustomerBoImpl implements CustomerBO {
                 search.getSalary());
     }
 
+    @Override
+    public boolean updateCustomer(CustomerDTO customerDTO) throws Exception {
+        return customerDAO.update(new Customer(customerDTO.getId(),customerDTO.getName()
+                ,customerDTO.getAddress(),customerDTO.getSalary()));
+    }
+
 
 }
